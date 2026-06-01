@@ -367,12 +367,16 @@ sharing your blessings, laughter and love on this joyous occasion.
 
 </div>
 <script>
-document.getElementById('enterBtn').addEventListener('click', function() {
-    document.getElementById('bgm').play();
-    document.getElementById('welcome-screen').style.display = 'none';
+window.addEventListener('load', () => {
+    const audio = document.getElementById('bgm');
+
+    audio.play().then(() => {
+        audio.muted = false;
+    }).catch(err => {
+        console.log("Autoplay blocked");
+    });
 });
 </script>
-</section>
 
 <section class="greeting">
 
