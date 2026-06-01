@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Muthu Vignesh ❤️ Nivetha</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    overflow-x:hidden;
+    color:white;
+    background:black;
+}
+
+.hero{
+    height:100vh;
+    background:
+    linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.65)),
+    url('https://images.unsplash.com/photo-1511285560929-80b456fea0bc');
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+}
+
+.hero-content{
+    animation:fadeIn 2s ease;
+}
+
+h1{
+    font-family:'Cinzel',serif;
+    font-size:4rem;
+    letter-spacing:3px;
+}
+
+.couple{
+    font-size:2rem;
+    margin:20px 0;
+    color:#ffd369;
+}
+
+.tagline{
+    font-size:1.2rem;
+    margin-top:15px;
+}
+
+.section{
+    padding:80px 10%;
+    text-align:center;
+    background:#111;
+}
+
+.card{
+    max-width:900px;
+    margin:auto;
+    padding:40px;
+    border-radius:20px;
+    backdrop-filter:blur(10px);
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.15);
+}
+
+.details{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+    margin-top:40px;
+}
+
+.box{
+    padding:25px;
+    border-radius:15px;
+    background:rgba(255,255,255,.08);
+}
+
+.box h3{
+    color:#ffd369;
+    margin-bottom:10px;
+}
+
+.countdown{
+    font-size:2rem;
+    color:#ffd369;
+    margin-top:20px;
+}
+
+.footer{
+    text-align:center;
+    padding:40px;
+    background:#000;
+}
+
+.btn{
+    padding:15px 35px;
+    border:none;
+    border-radius:50px;
+    background:#ffd369;
+    color:#000;
+    font-size:1rem;
+    cursor:pointer;
+    margin-top:25px;
+    font-weight:bold;
+}
+
+.floating-hearts{
+    position:fixed;
+    width:100%;
+    height:100%;
+    pointer-events:none;
+    z-index:999;
+}
+
+.heart{
+    position:absolute;
+    color:#ff4d6d;
+    animation:float 8s linear infinite;
+}
+
+@keyframes float{
+    0%{
+        transform:translateY(100vh);
+        opacity:0;
+    }
+    30%{
+        opacity:1;
+    }
+    100%{
+        transform:translateY(-100px);
+        opacity:0;
+    }
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@media(max-width:768px){
+    h1{
+        font-size:2.5rem;
+    }
+
+    .couple{
+        font-size:1.5rem;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="floating-hearts" id="hearts"></div>
+
+<!-- Background Music -->
+<audio id="bgm" loop>
+    <source src="Reunion Ceremony BGM.mp3" type="audio/mpeg">
+</audio>
+
+<section class="hero">
+    <div class="hero-content">
+        <h1>Wedding Invitation</h1>
+
+        <div class="couple">
+            MUTHU VIGNESH ❤️ NIVETHA
+        </div>
+
+        <p class="tagline">
+            Together with our families, we invite you to celebrate
+            our special day.
+        </p>
+
+        <button class="btn" onclick="playMusic()">
+            🎵 Enter Invitation
+        </button>
+    </div>
+</section>
+
+<section class="section">
+    <div class="card">
+        <h2>You're Invited</h2>
+
+        <div class="details">
+
+            <div class="box">
+                <h3>📅 Date</h3>
+                <p>25 June 2026</p>
+            </div>
+
+            <div class="box">
+                <h3>🎉 Reception</h3>
+                <p>Evening 7:00 PM</p>
+            </div>
+
+            <div class="box">
+                <h3>📍 Venue</h3>
+                <p>Mangalam Mahal</p>
+                <p>Kattumannarkoil</p>
+            </div>
+
+        </div>
+
+        <div class="countdown" id="countdown"></div>
+    </div>
+</section>
+
+<section class="footer">
+    <h2>We look forward to celebrating with you</h2>
+    <br>
+    <p>With Love ❤️</p>
+    <h3>Muthu Vignesh & Nivetha</h3>
+</section>
+
+<script>
+
+function playMusic(){
+    document.getElementById("bgm").play();
+}
+
+const weddingDate = new Date("June 25, 2026 19:00:00").getTime();
+
+setInterval(()=>{
+    let now = new Date().getTime();
+    let distance = weddingDate - now;
+
+    let days = Math.floor(distance/(1000*60*60*24));
+    let hours = Math.floor((distance%(1000*60*60*24))/(1000*60*60));
+    let minutes = Math.floor((distance%(1000*60*60))/(1000*60));
+
+    document.getElementById("countdown").innerHTML =
+    `⏳ ${days} Days ${hours} Hours ${minutes} Minutes`;
+
+},1000);
+
+function createHeart(){
+    const heart=document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML="❤";
+
+    heart.style.left=Math.random()*100+"vw";
+    heart.style.fontSize=Math.random()*20+15+"px";
+
+    document.getElementById("hearts").appendChild(heart);
+
+    setTimeout(()=>{
+        heart.remove();
+    },8000);
+}
+
+setInterval(createHeart,500);
+
+</script>
+
+</body>
+</html>
