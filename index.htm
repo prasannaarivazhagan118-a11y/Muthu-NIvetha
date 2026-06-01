@@ -117,30 +117,95 @@ body{
 /* EVENT */
 
 .event{
-    padding:90px 20px;
-    background:#faf3e8;
+    padding:100px 20px;
+    background:#f7f1e8;
 }
 
 .event-card{
-    max-width:1000px;
+    max-width:900px;
     margin:auto;
     background:white;
-    border-radius:25px;
-    padding:50px;
-    box-shadow:0 15px 40px rgba(0,0,0,0.08);
+    border-radius:30px;
+    padding:60px;
+    text-align:center;
+
+    box-shadow:
+    0 20px 50px rgba(0,0,0,.08);
+
+    border:2px solid #f0e2bf;
 }
 
-.event-card h2{
-    text-align:center;
-    color:#8b0000;
-    margin-bottom:40px;
+.section-title{
     font-family:'Cinzel',serif;
+    font-size:2rem;
+    color:#8b0000;
+    margin-bottom:50px;
+    letter-spacing:2px;
+}
+
+.event-row{
+    display:flex;
+    justify-content:space-around;
+    flex-wrap:wrap;
+    gap:30px;
+}
+
+.event-item{
+    min-width:200px;
+}
+
+.icon{
+    font-size:2rem;
+    display:block;
+    margin-bottom:15px;
+}
+
+.event-item h3{
+    font-size:1.6rem;
+    color:#b8860b;
+    margin-bottom:10px;
+}
+
+.event-item p{
+    color:#555;
+}
+
+.venue-btn{
+    display:inline-block;
+    margin-top:50px;
+    padding:16px 40px;
+
+    background:linear-gradient(
+    135deg,
+    #8b0000,
+    #c1121f
+    );
+
+    color:white;
+    text-decoration:none;
+    border-radius:50px;
+
+    font-weight:600;
+    font-size:18px;
+
+    box-shadow:
+    0 10px 25px rgba(139,0,0,.25);
 }
 
 .details{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
     gap:25px;
+}
+    .tagline{
+    max-width:750px;
+    margin:25px auto;
+    font-size:1.35rem;
+    line-height:2;
+    font-weight:300;
+    letter-spacing:0.5px;
+    color:#fff;
+    text-shadow:0 2px 15px rgba(0,0,0,0.6);
 }
 
 .box{
@@ -290,8 +355,10 @@ NIVETHA
 </h1>
 
 <p class="tagline">
-A beautiful journey begins with love, and we would be delighted
-to have you with us as we celebrate this special occasion.
+Life becomes beautiful when shared with family and friends.
+As we begin a new chapter together,
+we would be honored to have you by our side,
+sharing your blessings, laughter and love on this joyous occasion.
 </p>
 
 <button class="open-btn" onclick="playMusic()">
@@ -322,44 +389,39 @@ even more memorable.
 </section>
 
 <section class="event">
+  <div class="event-card">
 
-<div class="event-card">
+    <div class="section-title">
+      ✦ Wedding Reception ✦
+    </div>
 
-<h2>Wedding Reception Details</h2>
+    <div class="event-row">
+      <div class="event-item">
+        <span class="icon">📅</span>
+        <h3>25 June 2026</h3>
+        <p>Thursday</p>
+      </div>
 
-<div class="details">
+      <div class="event-item">
+        <span class="icon">⏰</span>
+        <h3>7:00 PM</h3>
+        <p>Reception</p>
+      </div>
 
-<div class="box">
-<h3>📅 Date</h3>
-<p>25 June 2026</p>
-</div>
+      <div class="event-item">
+        <span class="icon">📍</span>
+        <h3>Mangalam Mahal</h3>
+        <p>Kattumannarkoil</p>
+      </div>
+    </div>
 
-<div class="box">
-<h3>⏰ Time</h3>
-<p>7:00 PM Onwards</p>
-</div>
+    <a href="https://maps.app.goo.gl/V4Cj8nc3edvyhLpL8"
+       target="_blank"
+       class="venue-btn">
+       View Location
+    </a>
 
-<div class="box">
-<h3>📍 Venue</h3>
-<p>Mangalam Mahal</p>
-<p>Kattumannarkoil</p>
-
-<br>
-
-<a href="https://maps.app.goo.gl/V4Cj8nc3edvyhLpL8"
-target="_blank"
-class="venue-btn">
-
-View Venue Location
-
-</a>
-
-</div>
-
-</div>
-
-</div>
-
+  </div>
 </section>
 
 <section class="countdown">
@@ -437,5 +499,6 @@ setInterval(createHeart,800);
 </script>
 
 </body>
+    <footer>@_prasanna_offl_</footer>
 </html>
 ```
