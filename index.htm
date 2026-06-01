@@ -1,130 +1,217 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Muthu Vignesh ❤️ Nivetha</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Great+Vibes&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
 }
 
+html{
+    scroll-behavior:smooth;
+}
+
 body{
     font-family:'Poppins',sans-serif;
+    background:#fdf8f0;
     overflow-x:hidden;
-    color:white;
-    background:black;
 }
+
+/* HERO */
 
 .hero{
     height:100vh;
     background:
-    linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.65)),
-    url('https://images.unsplash.com/photo-1511285560929-80b456fea0bc');
+    linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.55)),
+    url('MN.jpeg');
     background-size:cover;
     background-position:center;
     display:flex;
-    align-items:center;
     justify-content:center;
+    align-items:center;
     text-align:center;
+    padding:20px;
 }
 
 .hero-content{
+    color:white;
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(8px);
+    padding:40px;
+    border-radius:25px;
+    max-width:800px;
     animation:fadeIn 2s ease;
 }
 
-h1{
+.invite{
+    font-family:'Great Vibes',cursive;
+    font-size:3rem;
+    color:#ffd700;
+}
+
+.names{
     font-family:'Cinzel',serif;
     font-size:4rem;
+    margin:20px 0;
     letter-spacing:3px;
 }
 
-.couple{
-    font-size:2rem;
-    margin:20px 0;
-    color:#ffd369;
+.names span{
+    color:#ffd700;
 }
 
 .tagline{
     font-size:1.2rem;
-    margin-top:15px;
+    line-height:1.8;
 }
 
-.section{
-    padding:80px 10%;
+.open-btn{
+    margin-top:30px;
+    padding:15px 40px;
+    border:none;
+    border-radius:50px;
+    background:linear-gradient(135deg,#d4af37,#ffd700);
+    color:#222;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.open-btn:hover{
+    transform:translateY(-3px);
+}
+
+/* GREETING */
+
+.greeting{
+    padding:90px 20px;
     text-align:center;
-    background:#111;
+    background:white;
 }
 
-.card{
+.greeting h2{
+    font-family:'Great Vibes',cursive;
+    font-size:3.5rem;
+    color:#8b0000;
+    margin-bottom:25px;
+}
+
+.greeting p{
     max-width:900px;
     margin:auto;
-    padding:40px;
-    border-radius:20px;
-    backdrop-filter:blur(10px);
-    background:rgba(255,255,255,.08);
-    border:1px solid rgba(255,255,255,.15);
+    font-size:18px;
+    line-height:2;
+    color:#555;
+}
+
+/* EVENT */
+
+.event{
+    padding:90px 20px;
+    background:#faf3e8;
+}
+
+.event-card{
+    max-width:1000px;
+    margin:auto;
+    background:white;
+    border-radius:25px;
+    padding:50px;
+    box-shadow:0 15px 40px rgba(0,0,0,0.08);
+}
+
+.event-card h2{
+    text-align:center;
+    color:#8b0000;
+    margin-bottom:40px;
+    font-family:'Cinzel',serif;
 }
 
 .details{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
     gap:25px;
-    margin-top:40px;
 }
 
 .box{
-    padding:25px;
-    border-radius:15px;
-    background:rgba(255,255,255,.08);
+    background:#fff9ef;
+    padding:30px;
+    border-radius:20px;
+    text-align:center;
 }
 
 .box h3{
-    color:#ffd369;
-    margin-bottom:10px;
+    color:#b8860b;
+    margin-bottom:15px;
 }
+
+.venue-btn{
+    display:inline-block;
+    margin-top:15px;
+    padding:12px 25px;
+    background:linear-gradient(135deg,#8b0000,#b22222);
+    color:white;
+    text-decoration:none;
+    border-radius:30px;
+    font-weight:600;
+}
+
+/* COUNTDOWN */
 
 .countdown{
-    font-size:2rem;
-    color:#ffd369;
-    margin-top:20px;
+    padding:90px 20px;
+    text-align:center;
+    background:white;
 }
+
+.countdown h2{
+    font-family:'Cinzel',serif;
+    margin-bottom:20px;
+}
+
+#timer{
+    font-size:2rem;
+    color:#8b0000;
+    font-weight:600;
+}
+
+/* FOOTER */
 
 .footer{
+    background:#111;
+    color:white;
     text-align:center;
-    padding:40px;
-    background:#000;
+    padding:80px 20px;
 }
 
-.btn{
-    padding:15px 35px;
-    border:none;
-    border-radius:50px;
-    background:#ffd369;
-    color:#000;
-    font-size:1rem;
-    cursor:pointer;
-    margin-top:25px;
-    font-weight:bold;
+.footer h2{
+    font-family:'Great Vibes',cursive;
+    color:#ffd700;
+    font-size:3rem;
 }
 
-.floating-hearts{
-    position:fixed;
-    width:100%;
-    height:100%;
-    pointer-events:none;
-    z-index:999;
+.footer p{
+    margin-top:15px;
 }
+
+/* HEARTS */
 
 .heart{
-    position:absolute;
+    position:fixed;
     color:#ff4d6d;
+    pointer-events:none;
     animation:float 8s linear infinite;
+    z-index:999;
 }
 
 @keyframes float{
@@ -153,119 +240,202 @@ h1{
 }
 
 @media(max-width:768px){
-    h1{
-        font-size:2.5rem;
+
+    .hero-content{
+        padding:25px;
     }
 
-    .couple{
-        font-size:1.5rem;
+    .invite{
+        font-size:2rem;
+    }
+
+    .names{
+        font-size:2.3rem;
+    }
+
+    .tagline{
+        font-size:1rem;
+    }
+
+    .event-card{
+        padding:25px;
+    }
+
+    #timer{
+        font-size:1.3rem;
     }
 }
+
 </style>
 </head>
 
 <body>
 
-<div class="floating-hearts" id="hearts"></div>
-
-<!-- Background Music -->
 <audio id="bgm" loop>
-    <source src="Reunion Ceremony BGM.mp3" type="audio/mpeg">
+    <source src="music.mp3" type="audio/mpeg">
 </audio>
 
 <section class="hero">
-    <div class="hero-content">
-        <h1>Wedding Invitation</h1>
 
-        <div class="couple">
-            MUTHU VIGNESH ❤️ NIVETHA
-        </div>
+<div class="hero-content">
 
-        <p class="tagline">
-            Together with our families, we invite you to celebrate
-            our special day.
-        </p>
+<p class="invite">Wedding Reception Invitation</p>
 
-        <button class="btn" onclick="playMusic()">
-            🎵 Enter Invitation
-        </button>
-    </div>
+<h1 class="names">
+MUTHU VIGNESH
+<br>
+<span>&</span>
+<br>
+NIVETHA
+</h1>
+
+<p class="tagline">
+A beautiful journey begins with love, and we would be delighted
+to have you with us as we celebrate this special occasion.
+</p>
+
+<button class="open-btn" onclick="playMusic()">
+💖 Open Invitation
+</button>
+
+</div>
+
 </section>
 
-<section class="section">
-    <div class="card">
-        <h2>You're Invited</h2>
+<section class="greeting">
 
-        <div class="details">
+<h2>Dear Friends</h2>
 
-            <div class="box">
-                <h3>📅 Date</h3>
-                <p>25 June 2026</p>
-            </div>
+<p>
+Friendship is one of life's greatest blessings.
 
-            <div class="box">
-                <h3>🎉 Reception</h3>
-                <p>Evening 7:00 PM</p>
-            </div>
+From countless conversations, shared laughter, and unforgettable memories,
+you have been a special part of our journey.
 
-            <div class="box">
-                <h3>📍 Venue</h3>
-                <p>Mangalam Mahal</p>
-                <p>Kattumannarkoil</p>
-            </div>
+As we step into a new chapter of life, it would mean the world
+to have you with us to celebrate this beautiful occasion.
 
-        </div>
+Your presence, blessings and warm wishes will make our celebration
+even more memorable.
+</p>
 
-        <div class="countdown" id="countdown"></div>
-    </div>
+</section>
+
+<section class="event">
+
+<div class="event-card">
+
+<h2>Wedding Reception Details</h2>
+
+<div class="details">
+
+<div class="box">
+<h3>📅 Date</h3>
+<p>25 June 2026</p>
+</div>
+
+<div class="box">
+<h3>⏰ Time</h3>
+<p>7:00 PM Onwards</p>
+</div>
+
+<div class="box">
+<h3>📍 Venue</h3>
+<p>Mangalam Mahal</p>
+<p>Kattumannarkoil</p>
+
+<br>
+
+<a href="https://maps.app.goo.gl/V4Cj8nc3edvyhLpL8"
+target="_blank"
+class="venue-btn">
+
+View Venue Location
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="countdown">
+
+<h2>Countdown To Celebration</h2>
+
+<div id="timer"></div>
+
 </section>
 
 <section class="footer">
-    <h2>We look forward to celebrating with you</h2>
-    <br>
-    <p>With Love ❤️</p>
-    <h3>Muthu Vignesh & Nivetha</h3>
+
+<h2>We Await Your Presence</h2>
+
+<p>With Love ❤️</p>
+
+<h3>Muthu Vignesh & Nivetha</h3>
+
+<p>25 June 2026 | Mangalam Mahal, Kattumannarkoil</p>
+
 </section>
 
 <script>
 
 function playMusic(){
+
     document.getElementById("bgm").play();
+
+    document.querySelector(".greeting").scrollIntoView({
+        behavior:"smooth"
+    });
 }
 
-const weddingDate = new Date("June 25, 2026 19:00:00").getTime();
+const weddingDate =
+new Date("June 25, 2026 19:00:00").getTime();
 
-setInterval(()=>{
-    let now = new Date().getTime();
-    let distance = weddingDate - now;
+setInterval(function(){
 
-    let days = Math.floor(distance/(1000*60*60*24));
-    let hours = Math.floor((distance%(1000*60*60*24))/(1000*60*60));
-    let minutes = Math.floor((distance%(1000*60*60))/(1000*60));
+    const now = new Date().getTime();
+    const distance = weddingDate - now;
 
-    document.getElementById("countdown").innerHTML =
-    `⏳ ${days} Days ${hours} Hours ${minutes} Minutes`;
+    const days = Math.floor(distance/(1000*60*60*24));
+    const hours = Math.floor((distance%(1000*60*60*24))/(1000*60*60));
+    const minutes = Math.floor((distance%(1000*60*60))/(1000*60));
+
+    document.getElementById("timer").innerHTML =
+    days + " Days • " +
+    hours + " Hours • " +
+    minutes + " Minutes";
 
 },1000);
 
 function createHeart(){
-    const heart=document.createElement("div");
+
+    const heart = document.createElement("div");
+
     heart.classList.add("heart");
-    heart.innerHTML="❤";
 
-    heart.style.left=Math.random()*100+"vw";
-    heart.style.fontSize=Math.random()*20+15+"px";
+    heart.innerHTML = "❤";
 
-    document.getElementById("hearts").appendChild(heart);
+    heart.style.left = Math.random()*100 + "vw";
+
+    heart.style.fontSize =
+    (Math.random()*20+15) + "px";
+
+    document.body.appendChild(heart);
 
     setTimeout(()=>{
         heart.remove();
     },8000);
 }
 
-setInterval(createHeart,500);
+setInterval(createHeart,800);
 
 </script>
 
 </body>
 </html>
+```
