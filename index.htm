@@ -337,7 +337,7 @@ body{
 <body>
 
 <audio id="bgm" loop>
-    <source src="Reunion Ceremony BGM.mp3" type="audio/mpeg">
+    <source src="Reunion Ceremony BGM" type="audio/mpeg">
 </audio>
 
 <section class="hero">
@@ -367,14 +367,9 @@ sharing your blessings, laughter and love on this joyous occasion.
 
 </div>
 <script>
-window.addEventListener('load', () => {
-    const audio = document.getElementById('bgm');
-
-    audio.play().then(() => {
-        audio.muted = false;
-    }).catch(err => {
-        console.log("Autoplay blocked");
-    });
+document.getElementById('enterBtn').addEventListener('click', function() {
+    document.getElementById('bgm').play();
+    document.getElementById('welcome-screen').style.display = 'none';
 });
 </script>
 
